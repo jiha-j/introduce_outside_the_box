@@ -1,0 +1,198 @@
+<% pageTitle = '책 소개' %>
+
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-title">책 소개</h1>
+        <p class="page-description">홀로서기 심리학이 당신에게 전하는 특별한 메시지를 만나보세요.</p>
+    </div>
+</div>
+
+<section class="book-overview">
+    <div class="container">
+        <div class="overview-content">
+            <div class="book-info">
+                <div class="book-visual">
+                    <div class="book-cover-large">
+                        <h2>홀로서기<br>심리학</h2>
+                        <p>진정한 나를 찾아가는<br>심리적 독립의 여정</p>
+                        <div class="cover-accent"></div>
+                    </div>
+                </div>
+                <div class="book-details">
+                    <h2>책의 철학</h2>
+                    <p class="book-philosophy">
+                        <%= book.description %>
+                    </p>
+                    <p>
+                        이 책은 단순히 혼자 사는 방법을 알려주는 것이 아닙니다. 진정한 심리적 독립은 타인과 단절하는 것이 아니라,
+                        자신의 중심을 잃지 않으면서도 깊고 의미 있는 관계를 맺을 수 있는 능력을 기르는 것입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="target-readers">
+    <div class="container">
+        <h2 class="section-title">이런 분들께 특히 추천합니다</h2>
+        <div class="readers-grid">
+            <% book.targetAudience.forEach((audience, index) => { %>
+            <div class="reader-card">
+                <div class="reader-icon">
+                    <%= index === 0 ? '🤔' : index === 1 ? '😰' : index === 2 ? '🔄' : index === 3 ? '🔍' : '🛡️' %>
+                </div>
+                <h3>
+                    <%= index === 0 ? '결정 장애' : index === 1 ? '분리 불안' : index === 2 ? '의존 패턴' : index === 3 ? '자아 탐색' : '경계 설정' %>
+                </h3>
+                <p><%= audience %></p>
+                <div class="reader-example">
+                    <% if (index === 0) { %>
+                    <small>"무엇을 선택해야 할지 항상 고민되고, 다른 사람의 의견을 구하게 되는 분"</small>
+                    <% } else if (index === 1) { %>
+                    <small>"혼자 있으면 불안하고, 계속 누군가와 함께 있고 싶은 분"</small>
+                    <% } else if (index === 2) { %>
+                    <small>"항상 비슷한 관계 패턴을 반복하며 건강하지 못한 관계에 빠지는 분"</small>
+                    <% } else if (index === 3) { %>
+                    <small>"진짜 내가 무엇을 원하는지, 누구인지 알고 싶은 분"</small>
+                    <% } else { %>
+                    <small>"다른 사람과의 관계에서 적절한 거리를 유지하고 싶은 분"</small>
+                    <% } %>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+<section class="book-benefits-detail">
+    <div class="container">
+        <h2 class="section-title">이 책으로 얻을 수 있는 것들</h2>
+        <div class="benefits-detailed">
+            <% book.benefits.forEach((benefit, index) => { %>
+            <div class="benefit-card">
+                <div class="benefit-number"><%= index + 1 %></div>
+                <div class="benefit-content">
+                    <h3><%= benefit %></h3>
+                    <div class="benefit-description">
+                        <% if (index === 0) { %>
+                        <p>타인의 눈치를 보지 않고 내 생각과 감정을 바탕으로 결정을 내릴 수 있는 자신감을 키웁니다.</p>
+                        <% } else if (index === 1) { %>
+                        <p>혼자 있는 시간을 두려워하지 않고 오히려 소중한 자아성찰과 성장의 기회로 활용합니다.</p>
+                        <% } else if (index === 2) { %>
+                        <p>상호 존중하고 성장할 수 있는 건강한 관계의 기준을 세우고 실천할 수 있습니다.</p>
+                        <% } else if (index === 3) { %>
+                        <p>외부 상황에 쉽게 흔들리지 않는 내적 평안과 정서적 안정감을 기릅니다.</p>
+                        <% } else { %>
+                        <p>나만의 고유한 가치관과 삶의 방향성을 찾아 진정성 있는 삶을 살 수 있습니다.</p>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+<section class="book-structure">
+    <div class="container">
+        <h2 class="section-title">책의 구성</h2>
+        <div class="structure-overview">
+            <div class="structure-part">
+                <h3>📚 Part 1: 이해하기 (1-3장)</h3>
+                <p>의존의 뿌리를 파악하고 진정한 자아를 찾는 기초 작업</p>
+                <div class="part-chapters">
+                    <% book.chapters.slice(0, 3).forEach(chapter => { %>
+                    <div class="mini-chapter">
+                        <span><%= chapter.id %>장</span>
+                        <strong><%= chapter.title %></strong>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+
+            <div class="structure-part">
+                <h3>🛠️ Part 2: 실천하기 (4-7장)</h3>
+                <p>경계 설정부터 독립적 관계까지, 실제 삶에 적용하는 기술들</p>
+                <div class="part-chapters">
+                    <% book.chapters.slice(3, 7).forEach(chapter => { %>
+                    <div class="mini-chapter">
+                        <span><%= chapter.id %>장</span>
+                        <strong><%= chapter.title %></strong>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+
+            <div class="structure-part">
+                <h3>🌱 Part 3: 성장하기 (8-10장)</h3>
+                <p>자존감 회복과 일상 실천을 통해 성숙한 인간관계로 발전</p>
+                <div class="part-chapters">
+                    <% book.chapters.slice(7).forEach(chapter => { %>
+                    <div class="mini-chapter">
+                        <span><%= chapter.id %>장</span>
+                        <strong><%= chapter.title %></strong>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="reading-approach">
+    <div class="container">
+        <h2 class="section-title">효과적인 독서법</h2>
+        <div class="approach-cards">
+            <div class="approach-card">
+                <div class="approach-icon">📖</div>
+                <h3>체계적 읽기</h3>
+                <p>1장부터 순서대로 읽어나가며 단계적으로 심리적 독립을 익혀나가세요.</p>
+            </div>
+            <div class="approach-card">
+                <div class="approach-icon">🎯</div>
+                <h3>선택적 읽기</h3>
+                <p>현재 가장 필요한 주제의 챕터부터 시작하여 필요에 따라 다른 챕터로 확장하세요.</p>
+            </div>
+            <div class="approach-card">
+                <div class="approach-icon">📝</div>
+                <h3>실습과 함께</h3>
+                <p>각 챕터의 실습 내용을 일기나 노트에 기록하며 변화 과정을 관찰하세요.</p>
+            </div>
+            <div class="approach-card">
+                <div class="approach-icon">🔄</div>
+                <h3>반복적 읽기</h3>
+                <p>중요한 챕터는 여러 번 읽으며 깊이 있는 이해와 체화를 추구하세요.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="author-message">
+    <div class="container">
+        <div class="message-card">
+            <h2>저자의 메시지</h2>
+            <div class="message-content">
+                <blockquote>
+                    "심리적 독립은 하루아침에 이루어지지 않습니다.
+                    작은 일상의 변화부터 시작하여 점진적으로 자신만의 속도로 성장해 나가시길 바랍니다.
+                    이 책이 그 여정에서 든든한 동반자가 되기를 희망합니다."
+                </blockquote>
+                <cite>— 홀로서기 심리학 저자</cite>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>지금 바로 시작하세요</h2>
+            <p>심리적 독립을 향한 첫걸음을 내딛어보세요.</p>
+            <div class="cta-actions">
+                <a href="/chapters" class="btn btn-primary btn-large">전체 목차 보기</a>
+                <a href="/chapter/1" class="btn btn-secondary btn-large">1장부터 읽기</a>
+            </div>
+        </div>
+    </div>
+</section>

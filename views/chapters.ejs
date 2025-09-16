@@ -1,0 +1,82 @@
+<% pageTitle = '목차' %>
+
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-title">목차</h1>
+        <p class="page-description">홀로서기 심리학의 10개 챕터를 통해 심리적 독립을 향한 여정을 시작하세요.</p>
+    </div>
+</div>
+
+<section class="chapters-list">
+    <div class="container">
+        <div class="chapters-container">
+            <% book.chapters.forEach((chapter, index) => { %>
+            <div class="chapter-item">
+                <div class="chapter-info">
+                    <div class="chapter-header">
+                        <span class="chapter-number">Chapter <%= chapter.id %></span>
+                        <h2 class="chapter-title">
+                            <a href="/chapter/<%= chapter.id %>"><%= chapter.title %></a>
+                        </h2>
+                    </div>
+                    <h3 class="chapter-subtitle"><%= chapter.subtitle %></h3>
+                    <p class="chapter-summary"><%= chapter.summary %></p>
+
+                    <div class="chapter-details">
+                        <div class="key-points">
+                            <h4>주요 내용</h4>
+                            <ul>
+                                <% chapter.keyPoints.forEach(point => { %>
+                                <li><%= point %></li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                        <div class="chapter-benefit">
+                            <h4>기대 효과</h4>
+                            <p><%= chapter.benefits %></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter-actions">
+                    <a href="/chapter/<%= chapter.id %>" class="btn btn-primary">자세히 보기</a>
+                </div>
+            </div>
+            <% if (index < book.chapters.length - 1) { %>
+            <div class="chapter-divider"></div>
+            <% } %>
+            <% }); %>
+        </div>
+
+        <div class="chapters-navigation">
+            <div class="nav-item">
+                <a href="/" class="btn btn-secondary">홈으로 돌아가기</a>
+            </div>
+            <div class="nav-item">
+                <a href="/about" class="btn btn-secondary">책 소개 보기</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="reading-guide">
+    <div class="container">
+        <div class="guide-card">
+            <h3>💡 독서 가이드</h3>
+            <div class="guide-content">
+                <div class="guide-item">
+                    <h4>순차적 읽기</h4>
+                    <p>1장부터 10장까지 순서대로 읽으면서 체계적으로 심리적 독립을 학습하세요.</p>
+                </div>
+                <div class="guide-item">
+                    <h4>관심 주제 우선</h4>
+                    <p>특별히 관심 있는 주제의 챕터를 먼저 읽고, 연관된 다른 챕터로 확장하세요.</p>
+                </div>
+                <div class="guide-item">
+                    <h4>실습과 함께</h4>
+                    <p>각 챕터의 실습 내용을 일상에 적용하며 천천히 변화를 경험하세요.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
