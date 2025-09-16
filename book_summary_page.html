@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상자 밖에 있는 사람들 - 자기기만의 심리학</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .book-cover {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .book-cover:hover {
+            transform: translateY(-10px);
+        }
+        
+        .book-image {
+            width: 200px;
+            height: 280px;
+            background: linear-gradient(45deg, #3498db, #2c3e50);
+            border-radius: 10px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .book-info {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .book-info h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .author-info {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h3 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .key-concepts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .concept-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #3498db;
+            transition: all 0.3s ease;
+        }
+        
+        .concept-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .concept-card h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .quotes {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .quote-author {
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+        
+        .recommendation {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .recommendation h3 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .key-concepts {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-content, .book-info {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>상자 밖에 있는 사람들</h1>
+            <div class="subtitle">자기기만의 심리학과 인간관계의 진실</div>
+        </header>
+        
+        <div class="content-grid">
+            <div class="book-cover">
+                <div class="book-image">
+                    📖<br>
+                    상자 밖에<br>있는 사람들
+                </div>
+                <div class="author-info">
+                    <h4>저자: 아빈저 연구소</h4>
+                    <p>조직 컨설팅 및 리더십 개발 전문 기관</p>
+                </div>
+            </div>
+            
+            <div class="book-info">
+                <h2>책 소개</h2>
+                <p>이 책은 우리가 일상에서 겪는 갈등과 대인관계 문제의 근본 원인을 '상자' 개념을 통해 설명합니다. 상자 안에 있다는 것은 자기기만의 상태로, 타인을 사물로 보고 자신만을 정당화하는 상태를 의미합니다.</p>
+                
+                <h3 style="margin-top: 30px; font-size: 1.3rem; color: #3498db;">핵심 메시지</h3>
+                <p>진정한 변화는 기술이나 방법론이 아닌, 마음가짐의 변화에서 시작됩니다. 상자에서 나와 타인을 한 명의 인간으로 바라보는 것이 모든 관계 개선의 출발점입니다.</p>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="section">
+                <h3><span class="icon">1</span>상자의 개념</h3>
+                <p>상자는 자기기만의 은유적 표현입니다. 상자 안에 있을 때 우리는:</p>
+                <ul style="margin: 20px 0; padding-left: 30px;">
+                    <li>타인을 방해물, 도구, 혹은 무관한 존재로 봅니다</li>
+                    <li>자신의 행동을 항상 정당화하려 합니다</li>
+                    <li>문제의 원인을 타인에게서 찾습니다</li>
+                    <li>방어적이고 비난하는 태도를 취합니다</li>
+                </ul>
+            </div>
+            
+            <div class="key-concepts">
+                <div class="concept-card">
+                    <h4>🔐 상자 안의 상태</h4>
+                    <p>타인을 객체로 보며, 자신의 잘못된 행동을 정당화하는 자기기만의 상태. 갈등과 문제가 지속적으로 발생합니다.</p>
+                </div>
+                
+                <div class="concept-card">
+                    <h4>🔓 상자 밖의 상태</h4>
+                    <p>타인을 나와 동등한 인간으로 보며, 진정한 공감과 이해가 가능한 상태. 협력과 신뢰가 형성됩니다.</p>
+                </div>
+                
+                <div class="concept-card">
+                    <h4>⚖️ 자기 배신</h4>
+                    <p>다른 사람을 위해 해야 할 일을 알면서도 하지 않는 것. 상자에 들어가게 되는 시작점입니다.</p>
+                </div>
+                
+                <div class="concept-card">
+                    <h4>🤝 공모</h4>
+                    <p>서로 상자 안에 있는 사람들이 서로의 상자를 정당화해주는 현상. 갈등이 악순환됩니다.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3><span class="icon">2</span>상자에서 나오는 방법</h3>
+                <p>상자에서 나오기 위한 핵심 단계들:</p>
+                
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 15px; margin: 20px 0;">
+                    <h4 style="color: #2c3e50; margin-bottom: 15px;">1. 자기 인식</h4>
+                    <p>자신이 상자 안에 있다는 것을 인정하고 받아들입니다.</p>
+                    
+                    <h4 style="color: #2c3e50; margin: 25px 0 15px;">2. 타인을 인간으로 보기</h4>
+                    <p>상대방도 나처럼 감정, 희망, 두려움을 가진 인간임을 인식합니다.</p>
+                    
+                    <h4 style="color: #2c3e50; margin: 25px 0 15px;">3. 자기 정당화 중단</h4>
+                    <p>변명과 합리화를 멈추고 진정한 책임을 집니다.</p>
+                    
+                    <h4 style="color: #2c3e50; margin: 25px 0 15px;">4. 도움이 되는 행동</h4>
+                    <p>상대방에게 도움이 되는 일을 실제로 실행합니다.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3><span class="icon">3</span>조직과 가정에서의 적용</h3>
+                <p>이 개념은 직장, 가정, 모든 인간관계에서 적용됩니다:</p>
+                
+                <div class="key-concepts">
+                    <div class="concept-card">
+                        <h4>🏢 직장에서</h4>
+                        <p>동료나 부하직원을 목표 달성을 위한 도구가 아닌, 각자의 목표와 꿈을 가진 사람으로 봅니다.</p>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h4>👨‍👩‍👧‍👦 가정에서</h4>
+                        <p>가족 구성원을 내 기대를 충족시켜야 하는 존재가 아닌, 독립적인 인격체로 존중합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quotes">
+            <div class="quote">
+                "문제는 다른 사람들이 아니다. 문제는 내가 다른 사람들을 바라보는 방식이다."
+            </div>
+            <div class="quote-author">- 상자 밖에 있는 사람들 중에서</div>
+        </div>
+        
+        <div class="recommendation">
+            <h3>🌟 추천하는 이유</h3>
+            <p>이 책은 단순한 기법이 아닌 근본적인 마음가짐의 변화를 제안합니다. 
+            리더십, 팀워크, 가족관계, 모든 인간관계에서 진정한 변화를 원하는 
+            사람들에게 필독서입니다. 복잡한 이론 대신 명확하고 실용적인 
+            통찰을 제공합니다.</p>
+        </div>
+    </div>
+</body>
+</html>
