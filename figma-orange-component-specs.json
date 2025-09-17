@@ -1,0 +1,472 @@
+{
+  "project": {
+    "name": "🧡 홀로서기 심리학 - 주황주황 귀여운 웹사이트",
+    "description": "따뜻하고 귀여운 주황색 테마의 심리적 독립 책 소개 웹사이트",
+    "url": "http://localhost:3000",
+    "version": "2.0.0 - Orange Cute Theme",
+    "theme": "Warm Orange & Cute",
+    "mood": "따뜻함, 귀여움, 친근함, 활기참"
+  },
+  "designSystem": {
+    "colors": {
+      "primaryOrange": {
+        "brightOrange": "#FF6B35",
+        "deepOrange": "#FF4500",
+        "coralOrange": "#FF7F50",
+        "peach": "#FFAB91",
+        "lightPeach": "#FFE0B2"
+      },
+      "warmSecondary": {
+        "warmYellow": "#FFD54F",
+        "sunsetPink": "#FF8A65",
+        "cream": "#FFF8E1",
+        "softGray": "#F5F5F5",
+        "darkCharcoal": "#424242"
+      },
+      "cuteAccents": {
+        "bubblegumPink": "#FFB3E6",
+        "mintGreen": "#B2DFDB",
+        "lavender": "#E1BEE7",
+        "skyBlue": "#81D4FA"
+      },
+      "gradients": {
+        "sunrise": "linear-gradient(135deg, #FF6B35 0%, #FFD54F 100%)",
+        "sunset": "linear-gradient(135deg, #FF8A65 0%, #FF6B35 100%)",
+        "peachDream": "linear-gradient(135deg, #FFAB91 0%, #FFE0B2 100%)",
+        "warmGlow": "linear-gradient(135deg, #FF7F50 0%, #FFB3E6 50%, #FFD54F 100%)",
+        "heroGradient": "linear-gradient(135deg, #FF8A65 0%, #FF6B35 50%, #FFD54F 100%)",
+        "bookCover": "linear-gradient(145deg, #FF6B35, #FF8A65, #FFD54F)",
+        "headerGradient": "linear-gradient(90deg, #FFF8E1 0%, #FFE0B2 100%)"
+      }
+    },
+    "typography": {
+      "fontFamily": "'Noto Sans KR', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif",
+      "weights": {
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "semiBold": 600,
+        "bold": 700,
+        "extraBold": 800
+      },
+      "sizes": {
+        "heroTitle": "2.8rem",
+        "heroSubtitle": "1.4rem",
+        "pageTitle": "2.2rem",
+        "sectionTitle": "1.8rem",
+        "chapterTitle": "1.25rem",
+        "body": "1rem",
+        "small": "0.875rem",
+        "tiny": "0.75rem"
+      },
+      "letterSpacing": {
+        "titles": "0.5px",
+        "body": "0.3px",
+        "small": "0.2px"
+      }
+    },
+    "spacing": {
+      "xxs": "0.25rem",
+      "xs": "0.5rem",
+      "s": "0.75rem",
+      "m": "1rem",
+      "l": "1.5rem",
+      "xl": "2rem",
+      "xxl": "3rem",
+      "xxxl": "4rem",
+      "xxxxl": "6rem"
+    },
+    "borderRadius": {
+      "tiny": "4px",
+      "small": "8px",
+      "medium": "12px",
+      "large": "16px",
+      "xlarge": "24px",
+      "round": "50%",
+      "superRound": "32px"
+    },
+    "shadows": {
+      "soft": "0 2px 8px rgba(255, 107, 53, 0.15)",
+      "medium": "0 4px 16px rgba(255, 107, 53, 0.2)",
+      "strong": "0 8px 24px rgba(255, 107, 53, 0.25)",
+      "glow": "0 0 20px rgba(255, 107, 53, 0.3)",
+      "book": "0 20px 40px rgba(255, 107, 53, 0.4)",
+      "orangeGlow": "0 4px 16px rgba(255, 107, 53, 0.4)",
+      "peachSoft": "0 2px 12px rgba(255, 171, 145, 0.3)",
+      "yellowBright": "0 3px 12px rgba(255, 213, 79, 0.25)"
+    },
+    "animations": {
+      "transitions": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      "bounceTransition": "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+      "gentleBounce": "gentle-bounce 2s ease-in-out infinite",
+      "gentleFloat": "gentle-float 4s ease-in-out infinite",
+      "fadeIn": "fade-in 1s ease-out",
+      "slideUp": "slide-up 1s ease-out",
+      "titleBounce": "title-bounce 1.2s ease-out 0.3s both"
+    }
+  },
+  "components": {
+    "cuteHeader": {
+      "name": "🍊 Cute Header",
+      "description": "따뜻한 주황색 그라데이션 헤더",
+      "properties": {
+        "background": "linear-gradient(90deg, #FFF8E1 0%, #FFE0B2 100%)",
+        "boxShadow": "0 4px 20px rgba(255, 107, 53, 0.15)",
+        "borderBottom": "3px solid #FF6B35",
+        "position": "sticky",
+        "top": "0",
+        "padding": "1.2rem 0",
+        "backdropFilter": "blur(10px)"
+      },
+      "logo": {
+        "fontSize": "1.6rem",
+        "fontWeight": 800,
+        "color": "#FF4500",
+        "textShadow": "0 2px 4px rgba(255, 107, 53, 0.2)",
+        "emoji": "🧡",
+        "animation": "gentle-bounce 2s ease-in-out infinite",
+        "hoverTransform": "translateY(-2px) scale(1.05)",
+        "hoverTextShadow": "0 4px 8px rgba(255, 107, 53, 0.3)"
+      },
+      "navigation": {
+        "background": "rgba(255, 248, 225, 0.9)",
+        "borderRadius": "25px",
+        "padding": "0.5rem 1.5rem",
+        "backdropFilter": "blur(5px)",
+        "linkColor": "#FF6B35",
+        "linkFontWeight": 600,
+        "hoverColor": "#FF4500",
+        "hoverBackground": "rgba(255, 171, 145, 0.3)",
+        "hoverTransform": "translateY(-2px)"
+      }
+    },
+    "warmHeroSection": {
+      "name": "🌅 Warm Hero Section",
+      "description": "따뜻한 주황색 그라데이션 히어로",
+      "properties": {
+        "background": "linear-gradient(135deg, #FF8A65 0%, #FF6B35 50%, #FFD54F 100%)",
+        "padding": "5rem 0 7rem",
+        "color": "#ffffff",
+        "animation": "gentle-glow 8s ease-in-out infinite",
+        "overlay": "radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)"
+      },
+      "title": {
+        "fontSize": "2.8rem",
+        "fontWeight": 800,
+        "textShadow": "0 4px 8px rgba(0, 0, 0, 0.2)",
+        "animation": "title-bounce 1.2s ease-out 0.3s both"
+      },
+      "subtitle": {
+        "fontSize": "1.4rem",
+        "fontWeight": 500,
+        "prefix": "🌱 ",
+        "suffix": " 🌸",
+        "animation": "fade-in 1s ease-out 0.6s both"
+      },
+      "actions": {
+        "gap": "1.5rem",
+        "animation": "fade-in 1s ease-out 1.2s both"
+      }
+    },
+    "superCuteButtons": {
+      "name": "🎀 Super Cute Buttons",
+      "description": "초귀여운 주황색 버튼들",
+      "primary": {
+        "background": "linear-gradient(45deg, #FF6B35 0%, #FF8A65 100%)",
+        "color": "#FFFFFF",
+        "padding": "14px 28px",
+        "borderRadius": "24px",
+        "fontWeight": 600,
+        "boxShadow": "0 4px 16px rgba(255, 107, 53, 0.3)",
+        "border": "2px solid rgba(255, 255, 255, 0.3)",
+        "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+        "hoverTransform": "translateY(-3px) scale(1.05)",
+        "hoverBoxShadow": "0 8px 24px rgba(255, 107, 53, 0.4)",
+        "hoverBackground": "linear-gradient(45deg, #FF4500 0%, #FF6B35 100%)",
+        "sparkleIcon": "✨",
+        "activeTransform": "translateY(-1px) scale(1.02)"
+      },
+      "secondary": {
+        "background": "transparent",
+        "color": "#FFFFFF",
+        "border": "3px solid #FFFFFF",
+        "backdropFilter": "blur(5px)",
+        "hoverBackground": "linear-gradient(45deg, #FFE0B2 0%, #FFAB91 100%)",
+        "hoverColor": "#FF4500",
+        "hoverTransform": "translateY(-2px) rotate(1deg)",
+        "hoverBorderColor": "#FFE0B2"
+      },
+      "large": {
+        "padding": "18px 36px",
+        "fontSize": "1.2rem",
+        "borderRadius": "32px",
+        "emojis": {
+          "chapters": "📚 목차 보기",
+          "start": "🌟 시작하기"
+        }
+      },
+      "round": {
+        "width": "48px",
+        "height": "48px",
+        "borderRadius": "50%",
+        "background": "linear-gradient(45deg, #FFB3E6 0%, #FF8A65 100%)",
+        "boxShadow": "0 4px 12px rgba(255, 179, 230, 0.4)",
+        "hoverTransform": "translateY(-2px) scale(1.1)"
+      }
+    },
+    "adorableBookMockup": {
+      "name": "📖 Adorable Book Mockup",
+      "description": "아기자기한 3D 책 목업",
+      "small": {
+        "width": "200px",
+        "height": "280px",
+        "background": "linear-gradient(145deg, #FF6B35, #FF8A65, #FFD54F)",
+        "borderRadius": "12px",
+        "border": "4px solid #FFFFFF",
+        "boxShadow": "0 20px 40px rgba(255, 107, 53, 0.4)",
+        "transform": "rotateY(-20deg) rotateX(5deg)",
+        "animation": "gentle-float 4s ease-in-out infinite",
+        "hoverTransform": "rotateY(0deg) rotateX(0deg) scale(1.05)",
+        "hoverBoxShadow": "0 25px 50px rgba(255, 107, 53, 0.5)"
+      },
+      "large": {
+        "width": "320px",
+        "height": "420px",
+        "border": "5px solid #FFFFFF",
+        "borderRadius": "16px",
+        "boxShadow": "0 25px 60px rgba(255, 107, 53, 0.4)",
+        "animation": "gentle-float 5s ease-in-out infinite",
+        "hoverTransform": "scale(1.05)",
+        "hoverBoxShadow": "0 30px 70px rgba(255, 107, 53, 0.5)"
+      },
+      "decorations": {
+        "heartShapes": "in corners",
+        "gradientText": "with shadow",
+        "decorativeBorders": "cute patterns",
+        "sparkleParticles": "around the book"
+      }
+    },
+    "lovelyChapterCard": {
+      "name": "🎨 Lovely Chapter Card",
+      "description": "사랑스러운 챕터 카드",
+      "properties": {
+        "background": "linear-gradient(135deg, #FFFFFF 0%, #FFF8E1 100%)",
+        "padding": "2.5rem",
+        "borderRadius": "20px",
+        "border": "3px solid #FFE0B2",
+        "boxShadow": "0 8px 24px rgba(255, 107, 53, 0.15)",
+        "transition": "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        "hoverTransform": "translateY(-8px) rotate(1deg)",
+        "hoverBoxShadow": "0 16px 32px rgba(255, 107, 53, 0.25)",
+        "hoverBorderColor": "#FF6B35"
+      },
+      "chapterNumber": {
+        "background": "linear-gradient(45deg, #FF6B35, #FFD54F)",
+        "color": "#FFFFFF",
+        "padding": "0.5rem 1rem",
+        "borderRadius": "16px",
+        "fontWeight": 700,
+        "boxShadow": "0 2px 8px rgba(255, 107, 53, 0.3)",
+        "position": "absolute",
+        "top": "-10px",
+        "left": "20px"
+      },
+      "emojis": {
+        "chapter1": "🌱",
+        "chapter2": "💭",
+        "chapter3": "🎯",
+        "chapter4": "🛡️",
+        "chapter5": "💪",
+        "chapter6": "🤝",
+        "chapter7": "🌈",
+        "chapter8": "✨",
+        "chapter9": "🦋",
+        "chapter10": "🌟"
+      },
+      "animations": {
+        "hover": "gentle wiggle animation",
+        "click": "small bounce effect"
+      }
+    },
+    "cutePageHeader": {
+      "name": "🌈 Cute Page Header",
+      "description": "귀여운 페이지 헤더",
+      "properties": {
+        "background": "linear-gradient(135deg, #FF8A65 0%, #FF6B35 50%, #FFD54F 100%)",
+        "padding": "3.5rem 0",
+        "color": "#ffffff",
+        "textAlign": "center",
+        "overlay": "radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)",
+        "animation": "float-overlay 8s ease-in-out infinite"
+      },
+      "titleEmojis": {
+        "chapters": "📖 목차",
+        "about": "🧡 책 소개",
+        "chapter": "📚 챕터"
+      }
+    },
+    "playfulFooter": {
+      "name": "🌈 Playful Footer",
+      "description": "활기찬 푸터",
+      "properties": {
+        "background": "linear-gradient(135deg, #FF8A65 0%, #424242 100%)",
+        "color": "#FFFFFF",
+        "padding": "4rem 0 2rem"
+      },
+      "sectionIcons": {
+        "bookInfo": "📚",
+        "links": "🔗",
+        "contact": "📧"
+      },
+      "linkColors": {
+        "default": "#FFE0B2",
+        "hover": "#FFD54F"
+      },
+      "decorations": {
+        "patternOverlay": "subtle pattern",
+        "floatingHearts": "heart animations",
+        "gradientDividers": "between sections"
+      }
+    }
+  },
+  "pageUpdates": {
+    "homepage": {
+      "heroAdditions": {
+        "floatingEmojis": ["🌟", "💫", "🌈", "🦋"],
+        "parallaxBackground": "gentle color shifts",
+        "cuteSubtitle": "🌱 마음의 정원을 가꾸는 특별한 여행 🌸"
+      },
+      "featuredChapters": {
+        "uniqueGradients": "each card gets unique gradient",
+        "staggeredAnimation": "on scroll",
+        "cuteHoverEffects": "slight rotation"
+      },
+      "benefitsSection": {
+        "emojiCheckmarks": "replace checkmarks with emojis",
+        "pulseAnimation": "gentle pulse",
+        "colorfulGradients": "each benefit"
+      },
+      "targetAudience": {
+        "avatarIllustrations": "fun character illustrations",
+        "bouncyHoverAnimations": "bouncy effects",
+        "colorfulSpeechBubbles": "for descriptions"
+      }
+    },
+    "chaptersPage": {
+      "pageHeaderUpdate": {
+        "title": "📖 목차",
+        "subtitle": "🌟 10개의 특별한 여행지를 만나보세요 ✨"
+      },
+      "chapterList": {
+        "uniqueColorThemes": "each chapter",
+        "progressIndicators": "1/10, 2/10, etc.",
+        "readingTimeEstimates": "clock emoji 🕐",
+        "difficultyLevels": "star ratings ⭐⭐⭐"
+      },
+      "readingGuide": {
+        "iconUpdates": {
+          "sequential": "📚",
+          "targeted": "🎪",
+          "practical": "✏️"
+        },
+        "playfulCardEffects": "hover flip effects",
+        "cuteIllustrations": "for each guide type"
+      }
+    },
+    "aboutPage": {
+      "bookOverview": {
+        "largerBookMockup": "more prominent",
+        "floatingElements": "around book",
+        "quoteBubbles": "author thoughts"
+      },
+      "readerTypes": {
+        "characterIllustrations": "fun characters",
+        "personalityColors": "color coding",
+        "interactiveHoverStates": "character animations"
+      },
+      "benefitsDetail": {
+        "numberBadges": "fun shapes (circles, stars, hearts)",
+        "gradientProgressBars": "benefit strength",
+        "cuteIcons": "representing each benefit"
+      },
+      "readingApproach": {
+        "methodIcons": "with animations",
+        "interactiveCards": "flip on hover",
+        "personalRecommendations": "based on user type"
+      }
+    }
+  },
+  "interactionsAnimations": {
+    "pageLoad": {
+      "staggeredFadeIn": "with bounce",
+      "elementsAppear": "cute timing"
+    },
+    "scrollAnimations": {
+      "parallaxElements": "background elements",
+      "cardsSlideIn": "from different directions",
+      "numberCounters": "with easing"
+    },
+    "hoverEffects": {
+      "gentleRotation": "1-3 degrees",
+      "scaleTransforms": "1.05x",
+      "colorTransitions": "with ease-out",
+      "shadowDepthChanges": "depth changes"
+    },
+    "clickFeedback": {
+      "softBounce": "animations",
+      "rippleEffects": "on buttons",
+      "gentleShake": "for errors",
+      "confettiCelebrations": "for success"
+    },
+    "loadingStates": {
+      "cuteSpinners": "with emojis",
+      "gradientProgressBars": "warm colors",
+      "skeletonScreens": "warm colors"
+    }
+  },
+  "figmaInstructions": {
+    "setupSteps": [
+      "1. Figma 새 프로젝트: '🧡 홀로서기 심리학 - 주황주황 귀여운 테마'",
+      "2. 주황색 컬러 팔레트와 그라데이션으로 컬러 스타일 생성",
+      "3. 귀여운 버튼, 카드, 헤더 컴포넌트 라이브러리 구축",
+      "4. 각 페이지별 아트보드 생성 (Desktop 1200px, Mobile 375px)",
+      "5. 따뜻한 주황색과 귀여운 요소들로 페이지 완성",
+      "6. 호버, 클릭 등 인터랙션 프로토타입 연결",
+      "7. 이모지와 애니메이션 효과 추가"
+    ],
+    "designPrinciples": [
+      "따뜻하고 친근한 주황색 중심 디자인",
+      "귀여운 이모지와 둥근 모서리 활용",
+      "충분한 화이트스페이스와 부드러운 그라데이션",
+      "호버 시 살짝 움직이는 재미있는 인터랙션",
+      "접근성을 고려한 색상 대비와 폰트 크기",
+      "모바일 우선 반응형 디자인"
+    ],
+    "componentLibrary": {
+      "colors": "주황색 팔레트와 그라데이션 컬렉션",
+      "typography": "Noto Sans KR 폰트 스타일 세트",
+      "buttons": "귀여운 버튼 변형들 (Primary, Secondary, Round)",
+      "cards": "챕터 카드, 혜택 카드 등",
+      "headers": "네비게이션과 페이지 헤더",
+      "icons": "이모지 기반 아이콘 세트",
+      "animations": "호버, 클릭 인터랙션 정의"
+    }
+  },
+  "accessibility": {
+    "colorContrast": {
+      "text": "WCAG AA 기준 충족",
+      "buttons": "충분한 색상 대비",
+      "backgrounds": "읽기 쉬운 조합"
+    },
+    "typography": {
+      "minFontSize": "14px",
+      "lineHeight": "1.6 이상",
+      "letterSpacing": "적절한 자간"
+    },
+    "interactions": {
+      "focusIndicators": "귀여운 포커스 스타일",
+      "hoverStates": "명확한 호버 피드백",
+      "clickFeedback": "즉시 반응"
+    }
+  }
+}

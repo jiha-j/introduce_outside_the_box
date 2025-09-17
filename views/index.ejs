@@ -29,15 +29,15 @@
             <h2 class="hero-subtitle"><%= book.subtitle %></h2>
             <p class="hero-description"><%= book.description %></p>
             <div class="hero-actions">
-                <a href="/chapters" class="btn btn-primary">목차 보기</a>
-                <a href="/about" class="btn btn-secondary">책 소개</a>
+                <a href="/chapters" class="btn btn-primary">📚 목차 보기<span class="btn-icon">✨</span></a>
+                <a href="/about" class="btn btn-secondary">🌟 책 소개<span class="btn-icon">🎯</span></a>
             </div>
         </div>
         <div class="hero-image">
             <div class="book-mockup">
                 <div class="book-cover">
-                    <h3>홀로서기<br>심리학</h3>
-                    <p>진정한 나를 찾아가는<br>심리적 독립의 여정</p>
+                    <h3>🌟 홀로서기<br>심리학 ✨</h3>
+                    <p>🌱 진정한 나를 찾아가는<br>심리적 독립의 여정 🦋</p>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
 
 <section class="featured-chapters">
     <div class="container">
-        <h2 class="section-title">주요 챕터</h2>
+        <h2 class="section-title">📖 주요 챕터 ✨</h2>
         <div class="chapters-grid">
             <% book.chapters.slice(0, 3).forEach(chapter => { %>
             <div class="chapter-card">
@@ -54,7 +54,7 @@
                 <h3 class="chapter-title"><%= chapter.title %></h3>
                 <p class="chapter-subtitle"><%= chapter.subtitle %></p>
                 <p class="chapter-summary"><%= chapter.summary %></p>
-                <a href="/chapter/<%= chapter.id %>" class="chapter-link">자세히 보기 →</a>
+                <a href="/chapter/<%= chapter.id %>" class="chapter-link">🔍 자세히 보기 <span class="btn-icon">✨</span></a>
             </div>
             <% }); %>
         </div>
@@ -63,11 +63,11 @@
 
 <section class="book-benefits">
     <div class="container">
-        <h2 class="section-title">이 책을 읽고 나면</h2>
+        <h2 class="section-title">🌟 이 책을 읽고 나면 🎯</h2>
         <div class="benefits-grid">
-            <% book.benefits.forEach(benefit => { %>
+            <% book.benefits.forEach((benefit, index) => { %>
             <div class="benefit-item">
-                <div class="benefit-icon">✓</div>
+                <div class="benefit-icon"><%= ['🌟', '💎', '🎯', '🚀', '💝'][index % 5] %></div>
                 <p><%= benefit %></p>
             </div>
             <% }); %>
@@ -77,11 +77,11 @@
 
 <section class="target-audience">
     <div class="container">
-        <h2 class="section-title">이런 분들께 추천합니다</h2>
+        <h2 class="section-title">💝 이런 분들께 추천합니다 🎪</h2>
         <div class="audience-grid">
-            <% book.targetAudience.forEach(audience => { %>
+            <% book.targetAudience.forEach((audience, index) => { %>
             <div class="audience-item">
-                <div class="audience-icon">👤</div>
+                <div class="audience-icon"><%= ['👥', '💼', '🎓', '❤️', '🌱'][index % 5] %></div>
                 <p><%= audience %></p>
             </div>
             <% }); %>
@@ -92,9 +92,9 @@
 <section class="cta-section">
     <div class="container">
         <div class="cta-content">
-            <h2>심리적 독립의 여정을 시작하세요</h2>
-            <p>진정한 나를 찾아가는 여행에 지금 동참하세요.</p>
-            <a href="/chapters" class="btn btn-primary btn-large">목차 살펴보기</a>
+            <h2>🌈 심리적 독립의 여정을 시작하세요 ✨</h2>
+            <p>🦋 진정한 나를 찾아가는 마법같은 여행에 지금 동참하세요 🌟</p>
+            <a href="/chapters" class="btn btn-primary btn-large">📚 목차 살펴보기<span class="btn-icon">🚀</span></a>
         </div>
     </div>
 </section>

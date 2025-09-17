@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* 🧡 Reset and Base Styles - Orange Cute Theme 2025 */
 * {
     margin: 0;
     padding: 0;
@@ -9,11 +9,45 @@ html {
     scroll-behavior: smooth;
 }
 
+/* 🌟 Enhanced cursor effects */
 body {
-    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fff;
+    font-family: 'Noto Sans KR', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    color: #424242;
+    background: linear-gradient(135deg, #FFF8E1 0%, #FFFFFF 50%, #FFE0B2 100%);
+    background-attachment: fixed;
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%23FF6B35" opacity="0.3"/><circle cx="10" cy="10" r="3" fill="%23FF4500"/></svg>'), auto;
+}
+
+/* ✨ Global sparkle animation */
+@keyframes sparkle {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+}
+
+/* 🎪 Floating particles */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, rgba(255, 107, 53, 0.3), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255, 213, 79, 0.4), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(255, 171, 145, 0.3), transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255, 179, 230, 0.2), transparent);
+    background-repeat: repeat;
+    background-size: 150px 100px;
+    animation: float-particles 20s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes float-particles {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-100px) rotate(360deg); }
 }
 
 .container {
@@ -22,58 +56,204 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+/* 🍊 Ultra Cute Header with Glassmorphism */
 .header {
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: linear-gradient(90deg, rgba(255, 248, 225, 0.95) 0%, rgba(255, 224, 178, 0.95) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    box-shadow:
+        0 8px 32px rgba(255, 107, 53, 0.15),
+        0 2px 8px rgba(255, 107, 53, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border-bottom: 3px solid #FF6B35;
+    border-image: linear-gradient(90deg, #FF6B35, #FFD54F, #FF6B35) 1;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+        rgba(255, 107, 53, 0.1) 0%,
+        rgba(255, 213, 79, 0.05) 50%,
+        rgba(255, 107, 53, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.header:hover::before {
+    opacity: 1;
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1.2rem 0;
+    position: relative;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #2c3e50;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #FF4500;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 2px 4px rgba(255, 107, 53, 0.2);
+    position: relative;
+}
+
+.logo::before {
+    content: '🧡 ';
+    animation: gentle-bounce 2s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(255, 107, 53, 0.3));
+}
+
+.logo::after {
+    content: '✨';
+    position: absolute;
+    right: -25px;
+    top: -5px;
+    font-size: 0.8rem;
+    animation: sparkle 3s ease-in-out infinite;
+    opacity: 0.7;
 }
 
 .logo:hover {
-    color: #3498db;
+    color: #FF6B35;
+    transform: translateY(-2px) scale(1.05);
+    text-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
+}
+
+@keyframes gentle-bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-3px); }
+    60% { transform: translateY(-2px); }
 }
 
 .nav-list {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1rem;
+    background: rgba(255, 248, 225, 0.95);
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    backdrop-filter: blur(15px) saturate(120%);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow:
+        0 8px 24px rgba(255, 107, 53, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-list::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+    animation: rotate-glow 8s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-list:hover::before {
+    opacity: 1;
+}
+
+@keyframes rotate-glow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .nav-list a {
     text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    color: #FF6B35;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
 .nav-list a:hover {
-    color: #3498db;
+    color: #FF4500;
+    background: linear-gradient(135deg, rgba(255, 171, 145, 0.4) 0%, rgba(255, 213, 79, 0.3) 100%);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+        0 6px 16px rgba(255, 107, 53, 0.3),
+        0 2px 8px rgba(255, 213, 79, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-/* Hero Section */
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #FF6B35;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-list a:hover::after {
+    width: 80%;
+}
+
+/* 🌅 Ultra Warm Hero Section with Magic */
 .hero-section {
-    padding: 4rem 0 6rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 6rem 0 8rem;
+    background: linear-gradient(135deg, #FF8A65 0%, #FF6B35 30%, #FFD54F 70%, #FF7F50 100%);
     color: white;
     position: relative;
     overflow: hidden;
+    animation: gentle-glow 12s ease-in-out infinite;
+}
+
+/* 🎆 Magical floating elements */
+.hero-section::after {
+    content: '🌟 💫 🌈 🦋 🌼 ✨ 🌙 💜 🌸 🌱';
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    opacity: 0.4;
+    animation: float-emojis 15s linear infinite;
+    pointer-events: none;
+    word-spacing: 3rem;
+    line-height: 4rem;
+}
+
+@keyframes float-emojis {
+    0% {
+        transform: translateX(-100%) translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.4;
+    }
+    90% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateX(100%) translateY(-20px) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 .hero-section::before {
@@ -83,7 +263,19 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.1);
+    background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    animation: float-overlay 10s ease-in-out infinite;
+}
+
+@keyframes gentle-glow {
+    0%, 100% { filter: hue-rotate(0deg) brightness(1); }
+    50% { filter: hue-rotate(10deg) brightness(1.1); }
+}
+
+@keyframes float-overlay {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    33% { transform: translateX(20px) translateY(-10px); }
+    66% { transform: translateX(-15px) translateY(10px); }
 }
 
 .hero-content {
@@ -91,61 +283,198 @@ body {
     z-index: 2;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 3rem;
+    gap: 4rem;
     align-items: center;
+    animation: slide-up 1s ease-out;
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
     line-height: 1.2;
+    text-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        0 8px 16px rgba(255, 107, 53, 0.2),
+        0 0 20px rgba(255, 255, 255, 0.1);
+    animation: title-bounce 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s both;
+    background: linear-gradient(45deg, #FFFFFF 0%, #FFE0B2 50%, #FFFFFF 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: title-bounce 1.5s ease-out 0.3s both, shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes title-bounce {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    60% {
+        transform: translateY(-5px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 1.4rem;
+    font-weight: 500;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    animation: fade-in 1s ease-out 0.6s both;
+}
+
+.hero-subtitle::before {
+    content: '🌟 ';
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.hero-subtitle::after {
+    content: ' 🌈';
+    animation: sparkle 2s ease-in-out infinite 1s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 0.95;
+        transform: translateX(0);
+    }
 }
 
 .hero-description {
     font-size: 1.1rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     line-height: 1.8;
     opacity: 0.95;
+    animation: fade-in 1s ease-out 0.9s both;
 }
 
 .hero-actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
+    animation: fade-in 1s ease-out 1.2s both;
 }
 
-/* Book Mockup */
+/* 📚 Magical Book Mockup */
 .book-mockup {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+/* ✨ Sparkle effects around book */
+.book-mockup::before {
+    content: '✨ 🌟 ✨ 💫 ✨ 🌟 ✨ 💫';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    animation: orbit-sparkles 8s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes orbit-sparkles {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(90deg) scale(1.1); }
+    50% { transform: rotate(180deg) scale(1); }
+    75% { transform: rotate(270deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
 }
 
 .book-cover {
-    width: 200px;
-    height: 280px;
-    background: linear-gradient(145deg, #34495e, #2c3e50);
-    border-radius: 8px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    padding: 2rem;
+    width: 220px;
+    height: 300px;
+    background: linear-gradient(145deg, #FF6B35 0%, #FF8A65 30%, #FFD54F 70%, #FF7F50 100%);
+    border-radius: 16px;
+    border: 5px solid #FFFFFF;
+    box-shadow:
+        0 25px 50px rgba(255, 107, 53, 0.4),
+        0 15px 30px rgba(255, 213, 79, 0.2),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        0 0 30px rgba(255, 107, 53, 0.2);
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     position: relative;
-    transform: rotateY(-15deg);
-    transition: transform 0.3s ease;
+    transform: rotateY(-25deg) rotateX(8deg);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: gentle-float 5s ease-in-out infinite;
+    overflow: hidden;
+}
+
+/* 🎆 Magical shimmer effect */
+.book-cover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 70%
+    );
+    transform: rotate(45deg);
+    animation: shimmer-sweep 3s ease-in-out infinite;
+}
+
+@keyframes shimmer-sweep {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    50% { transform: translateX(0%) translateY(0%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
 .book-cover:hover {
-    transform: rotateY(0deg);
+    transform: rotateY(5deg) rotateX(-5deg) scale(1.08);
+    box-shadow:
+        0 30px 60px rgba(255, 107, 53, 0.5),
+        0 20px 40px rgba(255, 213, 79, 0.3),
+        0 0 40px rgba(255, 107, 53, 0.3);
+    animation: gentle-float 2s ease-in-out infinite, book-glow 2s ease-in-out infinite;
+}
+
+@keyframes book-glow {
+    0%, 100% { filter: brightness(1) saturate(1); }
+    50% { filter: brightness(1.1) saturate(1.2); }
+}
+
+@keyframes gentle-float {
+    0%, 100% { transform: rotateY(-20deg) rotateX(5deg) translateY(0px); }
+    50% { transform: rotateY(-20deg) rotateX(5deg) translateY(-5px); }
 }
 
 .book-cover h3 {
@@ -162,11 +491,12 @@ body {
 }
 
 .book-cover-large {
-    width: 300px;
-    height: 400px;
-    background: linear-gradient(145deg, #34495e, #2c3e50);
-    border-radius: 12px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    width: 320px;
+    height: 420px;
+    background: linear-gradient(145deg, #FF6B35, #FF8A65, #FFD54F);
+    border-radius: 16px;
+    border: 5px solid #FFFFFF;
+    box-shadow: 0 25px 60px rgba(255, 107, 53, 0.4);
     padding: 3rem;
     display: flex;
     flex-direction: column;
@@ -174,6 +504,13 @@ body {
     text-align: center;
     position: relative;
     margin: 0 auto;
+    animation: gentle-float 5s ease-in-out infinite;
+    transition: all 0.4s ease;
+}
+
+.book-cover-large:hover {
+    transform: scale(1.05);
+    box-shadow: 0 30px 70px rgba(255, 107, 53, 0.5);
 }
 
 .book-cover-large h2 {
@@ -201,63 +538,217 @@ body {
     border-radius: 2px;
 }
 
-/* Buttons */
+/* 🎀 Ultra Cute Magic Buttons */
 .btn {
     display: inline-block;
-    padding: 12px 24px;
-    border-radius: 6px;
+    padding: 16px 32px;
+    border-radius: 28px;
     text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    letter-spacing: 0.8px;
+    backdrop-filter: blur(10px);
+    user-select: none;
+    transform: perspective(1000px) rotateX(0deg);
+}
+
+/* 🎆 Button ripple effect */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    opacity: 0;
+}
+
+.btn:active::after {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+    transition: width 0.1s ease, height 0.1s ease, opacity 0.1s ease;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn > * {
+    position: relative;
+    z-index: 1;
 }
 
 .btn-primary {
-    background: #3498db;
-    color: white;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8A65 50%, #FFD54F 100%);
+    background-size: 200% 200%;
+    color: #FFFFFF;
+    box-shadow:
+        0 6px 20px rgba(255, 107, 53, 0.4),
+        0 2px 8px rgba(255, 107, 53, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    animation: gradient-shift 4s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.btn-primary .btn-icon {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 1.2rem;
+    animation: icon-bounce 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes icon-bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(0deg); }
+    40% { transform: translateY(-3px) rotate(10deg); }
+    60% { transform: translateY(-2px) rotate(-10deg); }
 }
 
 .btn-primary:hover {
-    background: #2980b9;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    transform: translateY(-4px) scale(1.08) perspective(1000px) rotateX(-10deg);
+    box-shadow:
+        0 12px 32px rgba(255, 107, 53, 0.5),
+        0 6px 16px rgba(255, 213, 79, 0.3),
+        0 0 20px rgba(255, 107, 53, 0.2);
+    background: linear-gradient(135deg, #FF4500 0%, #FF6B35 50%, #FFD54F 100%);
+    border-color: rgba(255, 255, 255, 0.6);
+    animation: button-glow 1s ease-in-out infinite, gradient-shift 2s ease-in-out infinite;
+}
+
+@keyframes button-glow {
+    0%, 100% { filter: brightness(1) saturate(1); }
+    50% { filter: brightness(1.15) saturate(1.3); }
+}
+
+.btn-primary:hover::after {
+    opacity: 1;
+    right: 16px;
+}
+
+.btn-primary:active {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.5);
 }
 
 .btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px) saturate(120%);
+    box-shadow:
+        0 4px 16px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: #3498db;
+    background: linear-gradient(135deg, #FFE0B2 0%, #FFAB91 50%, #FFD54F 100%);
+    color: #FF4500;
+    transform: translateY(-3px) scale(1.05) rotate(2deg);
+    border-color: #FFE0B2;
+    box-shadow:
+        0 8px 24px rgba(255, 224, 178, 0.5),
+        0 4px 12px rgba(255, 171, 145, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px) saturate(140%);
+    animation: secondary-glow 2s ease-in-out infinite;
+}
+
+@keyframes secondary-glow {
+    0%, 100% { box-shadow: 0 8px 24px rgba(255, 224, 178, 0.5), 0 4px 12px rgba(255, 171, 145, 0.3); }
+    50% { box-shadow: 0 12px 32px rgba(255, 224, 178, 0.7), 0 6px 16px rgba(255, 171, 145, 0.5); }
 }
 
 .btn-large {
-    padding: 16px 32px;
-    font-size: 1.1rem;
+    padding: 18px 36px;
+    font-size: 1.2rem;
+    border-radius: 32px;
 }
 
 .btn.outline-btn {
     background: transparent;
-    border: 2px solid #3498db;
-    color: #3498db;
+    border: 3px solid #FF6B35;
+    color: #FF6B35;
+    backdrop-filter: blur(5px);
 }
 
 .btn.outline-btn:hover {
-    background: #3498db;
+    background: linear-gradient(45deg, #FF6B35 0%, #FF8A65 100%);
     color: white;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
 }
 
-/* Page Header */
+/* 🔘 Round Icon Button */
+.btn-round {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #FFB3E6 0%, #FF8A65 100%);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(255, 179, 230, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-round:hover {
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 6px 16px rgba(255, 179, 230, 0.6);
+}
+
+/* 🌈 Cute Page Header */
 .page-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #FF8A65 0%, #FF6B35 50%, #FFD54F 100%);
     color: white;
-    padding: 3rem 0;
+    padding: 3.5rem 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    animation: float-overlay 8s ease-in-out infinite;
 }
 
 .page-title {
@@ -298,25 +789,80 @@ section {
 }
 
 .chapter-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFF8E1 100%);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 3px solid rgba(255, 224, 178, 0.5);
+    box-shadow:
+        0 8px 32px rgba(255, 107, 53, 0.15),
+        0 4px 16px rgba(255, 171, 145, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+/* 🎆 Subtle shimmer on cards */
+.chapter-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 171, 145, 0.1) 50%,
+        transparent 70%
+    );
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    transition: transform 1.5s ease;
+}
+
+.chapter-card:hover::before {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
 }
 
 .chapter-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(-8px) scale(1.02) rotate(1deg);
+    box-shadow:
+        0 16px 48px rgba(255, 107, 53, 0.25),
+        0 8px 24px rgba(255, 171, 145, 0.2),
+        0 4px 12px rgba(255, 213, 79, 0.15);
+    border-color: rgba(255, 107, 53, 0.6);
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFE0B2 100%);
+    animation: card-glow 2s ease-in-out infinite;
+}
+
+@keyframes card-glow {
+    0%, 100% { filter: brightness(1) saturate(1); }
+    50% { filter: brightness(1.05) saturate(1.1); }
 }
 
 .chapter-number {
-    color: #3498db;
-    font-weight: 600;
-    font-size: 0.9rem;
+    display: inline-block;
+    background: linear-gradient(135deg, #FF6B35 0%, #FFD54F 100%);
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.5rem;
+    letter-spacing: 0.8px;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow:
+        0 4px 12px rgba(255, 107, 53, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    position: relative;
+    animation: chapter-badge-float 3s ease-in-out infinite;
+}
+
+@keyframes chapter-badge-float {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-2px) scale(1.05); }
 }
 
 .chapter-title {
@@ -340,16 +886,47 @@ section {
 }
 
 .chapter-link {
-    color: #3498db;
+    color: #FF6B35;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
-    transition: color 0.3s ease;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 213, 79, 0.1) 100%);
+    border: 2px solid rgba(255, 107, 53, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 1rem;
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+}
+
+.chapter-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.chapter-link:hover::before {
+    left: 100%;
 }
 
 .chapter-link:hover {
-    color: #2980b9;
+    color: #FF4500;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 213, 79, 0.2) 100%);
+    border-color: rgba(255, 107, 53, 0.5);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow:
+        0 6px 20px rgba(255, 107, 53, 0.3),
+        0 2px 8px rgba(255, 213, 79, 0.2);
+    text-shadow: 0 1px 2px rgba(255, 107, 53, 0.3);
 }
 
 /* Benefits Section */
@@ -398,8 +975,32 @@ section {
 }
 
 .audience-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    animation: audience-icon-bounce 4s ease-in-out infinite;
+    text-shadow: 0 2px 4px rgba(255, 107, 53, 0.2);
+}
+
+@keyframes audience-icon-bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(0deg); }
+    40% { transform: translateY(-5px) rotate(5deg); }
+    60% { transform: translateY(-3px) rotate(-5deg); }
+}
+
+.audience-item:hover {
+    transform: translateY(-8px) scale(1.03) rotate(1deg);
+    border-color: rgba(255, 107, 53, 0.5);
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFE0B2 100%);
+    box-shadow:
+        0 16px 48px rgba(255, 107, 53, 0.25),
+        0 8px 24px rgba(255, 171, 145, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    animation: audience-glow 2s ease-in-out infinite;
+}
+
+@keyframes audience-glow {
+    0%, 100% { filter: brightness(1) saturate(1); }
+    50% { filter: brightness(1.05) saturate(1.1); }
 }
 
 /* Chapter List Page */
@@ -988,11 +1589,31 @@ section {
     text-decoration: underline;
 }
 
-/* Footer */
+/* 🌈 Magic Footer */
 .footer {
-    background: #2c3e50;
+    background: linear-gradient(135deg, #FF8A65 0%, #FF6B35 50%, #424242 100%);
     color: white;
-    padding: 3rem 0 1rem;
+    padding: 4rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23FFE0B2" opacity="0.3"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="%23FFD54F" opacity="0.4"><animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite"/></circle><circle cx="60" cy="80" r="1" fill="%23FFAB91" opacity="0.5"><animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/></circle></svg>');
+    background-size: 100px 100px;
+    animation: float-background 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes float-background {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-100px); }
 }
 
 .footer-content {
@@ -1003,8 +1624,24 @@ section {
 }
 
 .footer-section h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: #ecf0f1;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer-section h3::before {
+    content: '📚 ';
+    margin-right: 0.5rem;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.footer-section:nth-child(2) h3::before {
+    content: '🔗 ';
+}
+
+.footer-section:nth-child(3) h3::before {
+    content: '📧 ';
 }
 
 .footer-section h4 {
@@ -1028,7 +1665,20 @@ section {
 }
 
 .footer-links a:hover {
-    color: #3498db;
+    color: #FFD54F;
+    text-shadow: 0 2px 4px rgba(255, 213, 79, 0.4);
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
+.footer-links a::before {
+    content: '✨ ';
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
 }
 
 .footer-bottom {
